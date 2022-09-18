@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Hello World</title>
+    <title>CU Event-Home</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,6 +13,7 @@
 
 
     <script src="./js/custom.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script
         nonce="64db8708-24c0-478f-9537-1f8f97d2add2">(function (w, d) { !function (a, e, t, r) { a.zarazData = a.zarazData || {}; a.zarazData.executed = []; a.zaraz = { deferred: [], listeners: [] }; a.zaraz.q = []; a.zaraz._f = function (e) { return function () { var t = Array.prototype.slice.call(arguments); a.zaraz.q.push({ m: e, a: t }) } }; for (const e of ["track", "set", "ecommerce", "debug"]) a.zaraz[e] = a.zaraz._f(e); a.zaraz.init = () => { var t = e.getElementsByTagName(r)[0], z = e.createElement(r), n = e.getElementsByTagName("title")[0]; n && (a.zarazData.t = e.getElementsByTagName("title")[0].text); a.zarazData.x = Math.random(); a.zarazData.w = a.screen.width; a.zarazData.h = a.screen.height; a.zarazData.j = a.innerHeight; a.zarazData.e = a.innerWidth; a.zarazData.l = a.location.href; a.zarazData.r = e.referrer; a.zarazData.k = a.screen.colorDepth; a.zarazData.n = e.characterSet; a.zarazData.o = (new Date).getTimezoneOffset(); a.zarazData.q = []; for (; a.zaraz.q.length;) { const e = a.zaraz.q.shift(); a.zarazData.q.push(e) } z.defer = !0; for (const e of [localStorage, sessionStorage]) Object.keys(e || {}).filter((a => a.startsWith("_zaraz_"))).forEach((t => { try { a.zarazData["z_" + t.slice(7)] = JSON.parse(e.getItem(t)) } catch { a.zarazData["z_" + t.slice(7)] = e.getItem(t) } })); z.referrerPolicy = "origin"; z.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a.zarazData))); t.parentNode.insertBefore(z, t) };["complete", "interactive"].includes(e.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, 0, "script"); })(window, document);</script>
 </head>
@@ -65,8 +66,6 @@
                             <ul>
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">About us</a></li>
-                                <li><a href="#">Events</a></li>
-                                <li><a href="#">News</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
                         </nav>
@@ -561,7 +560,7 @@
                         <header class="entry-header">
                             <h2 class="entry-title">Partners</h2>
                         </header>
-                        <div class="events-partners-logos flex flex-wrap justify-content-between align-items-center">
+                        <div class="events-partners-logos flex flex-wrap justify-content-between align-items-center mx-auto">
                             <div class="event-partner-logo">
                                 <a href="#"><img src="images/xpixar.png.pagespeed.ic.oZ-khOjwAn.webp" alt=""
                                         data-pagespeed-url-hash="988366808"
@@ -627,15 +626,15 @@
                         <p>Join our database NOW!</p>
                     </header>
                     <div class="newsletter-form">
-                        <form class="flex flex-wrap justify-content-center align-items-center">
+                        <form class="flex flex-wrap justify-content-center align-items-center form" id="form" method="post" action="./send.php">
                             <div class="col-md-12 col-lg-3">
-                                <input type="text" placeholder="Name">
+                                <input type="text" placeholder="Name" name="name">
                             </div>
                             <div class="col-md-12 col-lg-6">
-                                <input type="email" placeholder="Your e-mail">
+                                <input type="email" placeholder="Your e-mail" name="email">
                             </div>
                             <div class="col-md-12 col-lg-3">
-                                <input class="btn gradient-bg" type="submit" value="Subscribe">
+                                <input class="btn gradient-bg" type="submit" id="submit-button" value="Subscribe" name="submit">
                             </div>
                         </form>
                     </div>
@@ -656,26 +655,10 @@
                         <ul class="flex flex-wrap justify-content-center align-items-center">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">About us</a></li>
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">News</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </nav>
 
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
-                    made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                        target="_blank">Colorlib</a>
-
-                    <div class="footer-social">
-                        <ul class="flex flex-wrap justify-content-center align-items-center">
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -710,6 +693,25 @@
         integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
         data-cf-beacon='{"rayId":"74cd3c06c9f36efa","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.8.1","si":100}'
         crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#submit-button").click(function(){
+                var form = $("#form");
+                var url = form.attr('input');
+                $.ajax({
+                    type: "post",
+                    url: url,
+                    data: $("#form input").serialize(),
+                    success: function(data){
+                        console.log("data submitted successfully");
+                    },
+                    error: function(data){
+                        console.log("Error in submitting data");
+                    }
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>

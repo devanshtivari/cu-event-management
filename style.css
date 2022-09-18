@@ -2170,7 +2170,7 @@ ul.tabs-nav .tab-nav.active {
 .back-to-top {
     position: fixed;
     z-index: 9999;
-    right: 64px;
+    right:24px;
     bottom: 84px;
     width: 42px;
     height: 42px;
